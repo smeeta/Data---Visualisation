@@ -1,0 +1,20 @@
+##-------------------------------------------------------------------------
+## Boxplot 
+##-------------------------------------------------------------------------
+## Load libraries 
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(ggpubr)
+
+## Load files 
+
+de <- read.csv("DE-wilcox-lipid.csv",head=TRUE)
+head(de_metabolite)
+colnames(de)
+
+p <- ggboxplot(de, x = "Group", y = "TG",color = "Group", palette = "Set1",add = "jitter")
+#  Add p-value
+p + stat_compare_means()
+
+##-------------------------------------------------------------------------
