@@ -1,0 +1,28 @@
+#  Volcano Plot 
+
+res <- read.csv("volcano-2.csv",head=T); head(res)
+Metabolite <- res$Metabolite
+EnhancedVolcano(res,
+                lab = Metabolite,
+                x = 'log2FoldChange',
+                y = 'pvalue',
+                title = 'Lipidomics',
+                subtitle = "test vs control",
+                pCutoff = 0.05,
+                FCcutoff = 1.5, 
+                pointSize = 1.5,
+                labSize = 4.0,
+                xlim = c(-5,5),
+                ylim = c(0,5),
+                legendLabels=c('Not significant.','log2FoldChange','pvalue',
+                               'pvalue & log2FoldChange'),
+                legendPosition = 'bottom',
+                gridlines.major = FALSE, 
+                gridlines.minor = FALSE, 
+                drawConnectors = TRUE,
+                widthConnectors = 0.75)
+
+
+
+
+
